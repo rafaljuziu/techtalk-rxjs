@@ -1,0 +1,23 @@
+{
+  "name": "lecture-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rafaljuziu@bitbucket.org/rafaljuziu/techtalk-examples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/rafaljuziu/techtalk-examples#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "request": "^2.83.0",
+    "rxjs": "^5.5.2"
+  }
+}
