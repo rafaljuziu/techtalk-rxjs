@@ -7,11 +7,11 @@ class Taker {
 	onWillToHaveCandy() {
 		const candy = this.giver.getCandy(candy => {
 			this.receivedCandy(candy);
-		});		
+		});
 	}
 	
 	receivedCandy() {
 		this.swallow(candy);
-		this.faceExpression = faceExpression;
+		this.faceExpression = FACE_EXPRESSIONS.Smile;
 	}
 }

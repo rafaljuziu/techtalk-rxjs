@@ -7,6 +7,6 @@ class Taker {
 	onWillToHaveCandy() {
 		const candy = this.giver.getCandy();
 		this.swallow(candy);
-		this.faceExpression = faceExpression;
+		this.faceExpression = FACE_EXPRESSIONS.Smile;
 	}
 }
