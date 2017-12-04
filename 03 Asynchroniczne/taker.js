@@ -5,10 +5,7 @@ class Taker {
   }
 
   onWillToHaveCandy() {
-    const candy = this.giver.getCandy(candy => {
-      this.swallow(candy);
-      // this.faceExpression = FACE_EXPRESSIONS.Smile;
-    });
+    const candy = this.giver.getCandy(candy => this.swallow(candy));
   }
 
   swallow(candy) {
