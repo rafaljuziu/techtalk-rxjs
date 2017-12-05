@@ -4,10 +4,12 @@ class BusinessUseCaseWithOrdersHandler {
     this.orderRestApi = orderRestApi;
   }
 
-  getOrderWithId(id, callback) {
-    this.orderRestApi.fetchOrders(orders => {
-      const foundOrder = orders.find(order => order.id === id);
-      callback(foundOrder);
-    });
+  getAddressForClientByOrderWithId(id) {
+    return this.orderRestApi.fetchOrders().then(orders => {
+      return orders.find(order => order.id === id);
+    })
+      .then(order => {
+        return this.clientRestApi.findClient(order.clientId);
+      });
   }
 }
