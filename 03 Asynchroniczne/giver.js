@@ -1,10 +1,17 @@
-class Giver {
+// const Rx = require('rxjs/Rx');
 
-  getCandy(callback) {
-    const candy = new Candy();
-    callback(candy);
+module.exports = class Giver {
+
+  getCandy() {
+    return {
+      subscribe: observer => {
+        observer.next(new Candy());
+        observer.error();
+        observer.next(new Candy());
+      }
+    };
   }
-}
+};
 
 const sequence = (function *typeSeq() {
   yield 'Michałek';

@@ -16,12 +16,23 @@ const searchWikipedia = (term, callback) => request({
   }
 }, callback);
 
+let delayResponse = false;
+
 app.get('/api/search-wikipedia', function (req, res) {
   let text = req.query.text;
   console.log(`Pinged with ${text}`);
-  searchWikipedia(text, (error, response, body) => {
-    res.json(JSON.parse(body));
-  });
+  if (delayResponse) {
+    setTimeout(() => {
+      searchWikipedia(text, (error, response, body) => {
+        res.json(JSON.parse(body));
+      });
+    }, 5000);
+  } else {
+    searchWikipedia(text, (error, response, body) => {
+      res.json(JSON.parse(body));
+    });
+  }
+  delayResponse = !delayResponse;
 });
 
 app.listen(8080, () => console.log('REST API running on port 8080'));
